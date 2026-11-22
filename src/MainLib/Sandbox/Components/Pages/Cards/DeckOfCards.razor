@@ -1,0 +1,34 @@
+﻿@page "/deckofcards"
+@using Marqdouj.DotNet.Gaming.PlayingCards
+
+<PageTitle>Deck of Cards</PageTitle>
+
+<FluentStack Orientation="Orientation.Vertical">
+    <FluentLayoutItem Area="LayoutArea.Header">Deck of Cards</FluentLayoutItem>
+
+    <Toolbar>
+        <FluentButton IconStart="@(new Icons.Regular.Size20.ArrowReset())" Title="Reset Deck" OnClick="@ResetDeck" />
+        <FluentButton IconStart="@(new Icons.Regular.Size20.ArrowShuffle())" Title="Shuffle Deck" OnClick="@ShuffleDeck" />
+    </Toolbar>
+
+    <div class="carddeck-container">
+        @foreach (var card in Deck.Cards)
+        {
+            <CardView Card="@card" />
+        }
+    </div>
+</FluentStack>
+
+@code {
+    private readonly PlayingCardDeck Deck = new PlayingCardDeck();
+
+    private void ShuffleDeck()
+    {
+        Deck.Shuffle();
+    }
+
+    private void ResetDeck()
+    {
+        Deck.Reset();
+    }
+}

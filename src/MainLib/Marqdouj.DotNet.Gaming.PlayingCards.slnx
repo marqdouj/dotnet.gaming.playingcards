@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="Marqdouj.DotNet.Gaming.PlayingCards/Marqdouj.DotNet.Gaming.PlayingCards.csproj" />
+  <Project Path="Sandbox/Sandbox.csproj" Id="7779327d-40c5-45f4-b46d-1f0f7ef4e371" />
 </Solution>
